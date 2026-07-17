@@ -1,0 +1,18 @@
+# Node modules (if any)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor folders
+.vscode/
+.idea/
+
+# Local environment
+*.env
+.env.local
+
+# Log files
+*.log
