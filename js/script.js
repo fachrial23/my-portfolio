@@ -23,13 +23,25 @@ function initGreeting() {
 
   const greetings = ['Halo', 'Hello', 'こんにちは', '你好', 'สวัสดี', 'Привет', 'Xin chào'];
   let currentGreeting = 0;
+  const createWord = (text, className = '') => {
+    const word = document.createElement('span');
+    word.className = `greeting-word ${className}`.trim();
+    word.textContent = text;
+    return word;
+  };
+
+  greeting.replaceChildren(createWord(greetings[currentGreeting]));
 
   setInterval(() => {
     currentGreeting = (currentGreeting + 1) % greetings.length;
-    greeting.classList.remove('greeting-drop');
-    void greeting.offsetWidth;
-    greeting.textContent = greetings[currentGreeting];
-    greeting.classList.add('greeting-drop');
+    const currentWord = greeting.querySelector('.greeting-word:not(.greeting-leave)');
+    const nextWord = createWord(greetings[currentGreeting], 'greeting-enter');
+
+    if (currentWord) {
+      currentWord.classList.add('greeting-leave');
+      setTimeout(() => currentWord.remove(), 650);
+    }
+    greeting.appendChild(nextWord);
   }, 2800);
 }
 

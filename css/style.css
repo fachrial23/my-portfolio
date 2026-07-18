@@ -179,14 +179,27 @@ a {
 
 .logo-glow {
   color: #ffffff;
-  display: inline-block;
+  display: block;
+  position: relative;
+  height: 1.3em;
 }
 
-.logo-glow.greeting-drop {
-  animation: greetingDrop 0.55s cubic-bezier(0.22, 0.8, 0.36, 1) both;
+.greeting-word {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
 }
 
-@keyframes greetingDrop {
+.greeting-enter {
+  animation: greetingEnter 0.65s cubic-bezier(0.22, 0.8, 0.36, 1) both;
+}
+
+.greeting-leave {
+  animation: greetingLeave 0.65s cubic-bezier(0.55, 0, 0.78, 0.2) both;
+}
+
+@keyframes greetingEnter {
   0% {
     opacity: 0;
     transform: translateY(-120%);
@@ -197,8 +210,19 @@ a {
   }
 }
 
+@keyframes greetingLeave {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(120%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .logo-glow.greeting-drop { animation: none; }
+  .greeting-enter, .greeting-leave { animation: none; }
 }
 
 .nav-links {
