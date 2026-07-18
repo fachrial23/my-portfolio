@@ -158,7 +158,7 @@ function initCanvasParticles() {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255,255,255,${this.opacity})`;
+      ctx.fillStyle = `rgba(0,0,0,${this.opacity})`;
       ctx.fill();
     }
   }

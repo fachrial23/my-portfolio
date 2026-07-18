@@ -31,7 +31,7 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: var(--bg-primary);
+  background-color: #ffffff;
   font-family: var(--font-main);
   color: var(--color-text-main);
   -webkit-font-smoothing: antialiased;
@@ -288,7 +288,7 @@ a {
   width: 100%;
   height: 100%;
   max-width: 1200px;
-  background: var(--glass-bg);
+  background: rgba(10, 10, 10, 0.94);
   backdrop-filter: blur(14px) saturate(120%);
   -webkit-backdrop-filter: blur(14px) saturate(120%);
   border: 1px solid var(--glass-border);
