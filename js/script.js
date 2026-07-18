@@ -21,7 +21,7 @@ function initGreeting() {
   const greeting = document.getElementById('greetingText');
   if (!greeting) return;
 
-  const greetings = ['Halo', 'Hello', 'こんにちは', '你好', 'สวัสดี', 'Привет', 'Xin chào'];
+  const greetings = ['Halo', 'Hello', 'こんにちは', '你好', '안녕하세요', 'สวัสดี', 'Привет', 'Xin chào'];
   let currentGreeting = 0;
 
   setInterval(() => {
