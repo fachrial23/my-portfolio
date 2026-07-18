@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initLoader();
+  initGreeting();
   initNavigation();
   initCanvasParticles();
   initCursorTrail();
@@ -14,7 +15,26 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ============================================================================
-   1. INTRO LOADER
+   1. MULTILINGUAL GREETING
+   ============================================================================ */
+function initGreeting() {
+  const greeting = document.getElementById('greetingText');
+  if (!greeting) return;
+
+  const greetings = ['Halo', 'Hello', 'こんにちは', '你好', 'สวัสดี', 'Привет', 'Xin chào'];
+  let currentGreeting = 0;
+
+  setInterval(() => {
+    currentGreeting = (currentGreeting + 1) % greetings.length;
+    greeting.classList.remove('greeting-drop');
+    void greeting.offsetWidth;
+    greeting.textContent = greetings[currentGreeting];
+    greeting.classList.add('greeting-drop');
+  }, 2800);
+}
+
+/* ============================================================================
+   2. INTRO LOADER
    ============================================================================ */
 function initLoader() {
   const loader = document.getElementById('introOverlay');

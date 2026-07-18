@@ -173,10 +173,32 @@ a {
   font-size: 28px;
   font-weight: 800;
   letter-spacing: 3px;
+  width: 160px;
+  overflow: hidden;
 }
 
 .logo-glow {
   color: #ffffff;
+  display: inline-block;
+}
+
+.logo-glow.greeting-drop {
+  animation: greetingDrop 0.55s cubic-bezier(0.22, 0.8, 0.36, 1) both;
+}
+
+@keyframes greetingDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-120%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-glow.greeting-drop { animation: none; }
 }
 
 .nav-links {
@@ -1201,9 +1223,9 @@ a {
 
 @media (max-width: 768px) {
   .glass-header { height: 68px; padding: 0 20px; }
-  .logo { font-size: 22px; }
+  .logo { width: 110px; font-size: 18px; }
   .nav-btn span { display: none; }
-  .nav-btn { padding: 10px 14px; }
+  .nav-btn { padding: 10px 9px; }
   .section-panel { padding: 88px 18px 68px 18px; }
   .glass-card { padding: 18px; }
   .main-title { font-size: 30px; }
